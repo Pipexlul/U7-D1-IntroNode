@@ -55,4 +55,32 @@ const RegisterAppointment = {
   },
 };
 
-export default OperationsData = [RegisterAppointment];
+const ReadAppointments = {
+  aliases: ["read", "leer"],
+  run: async (metadata) => {
+    console.log("Reading all appointments");
+
+    if (metadata && metadata.usePromises) {
+      try {
+        const curData = await fsProm.readFile(
+          "../data/appointments.json",
+          "utf8"
+        );
+        const jsonData = JSON.parse(curData);
+        const prettyJson = JSON.stringify(jsonData, null, 2);
+        console.log(prettyJson);
+      } catch (err) {
+        console.error("No se pudieron leer las citas");
+        console.error(err);
+        process.exit(1);
+      }
+    } else {
+      const curData = fs.readFileSync("../data/appointments.json", "utf8");
+      const jsonData = JSON.parse(curData);
+      const prettyJson = JSON.stringify(jsonData, null, 2);
+      console.log(prettyJson);
+    }
+  },
+};
+
+export default OperationsData = [RegisterAppointment, ReadAppointments];
