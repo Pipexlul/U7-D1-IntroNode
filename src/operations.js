@@ -64,6 +64,7 @@ const RegisterAppointment = {
 
 const ReadAppointments = {
   aliases: ["read", "leer"],
+  requiredArgs: [],
   run: async (metadata) => {
     console.log("Reading all appointments");
 
