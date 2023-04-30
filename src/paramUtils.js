@@ -24,4 +24,34 @@ const checkValidParams = (paramArray, paramOptions) => {
   return result;
 };
 
-export { checkValidParams };
+/**
+ * Create an object with appointment parameters based on an array of values.
+ *
+ * @param {Array} params - An array containing the following values, in order:
+ *   - animalName (string): The name of the animal.
+ *   - animalAge (string): The age of the animal.
+ *   - animalType (string): The type of animal.
+ *   - animalColor (string): The color of the animal.
+ *   - sickness (string): The sickness the animal is suffering from.
+ * @returns {Object} An object with the following properties:
+ *   - nombre (string): The name of the animal.
+ *   - edad (string): The age of the animal.
+ *   - animal (string): The type of animal.
+ *   - color (string): The color of the animal.
+ *   - enfermedad (string): The sickness the animal is suffering from.
+ */
+const objectifyAppointmentParams = ([
+  animalName,
+  animalAge,
+  animalType,
+  animalColor,
+  sickness,
+]) => ({
+  nombre: animalName,
+  edad: animalAge,
+  animal: animalType,
+  color: animalColor,
+  enfermedad: sickness,
+});
+
+export { checkValidParams, objectifyAppointmentParams };
