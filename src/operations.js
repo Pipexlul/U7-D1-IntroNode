@@ -5,6 +5,13 @@ import { checkValidParams, objectifyAppointmentParams } from "./paramUtils";
 
 const RegisterAppointment = {
   aliases: ["register", "registrar"],
+  requiredArgs: [
+    "animalName",
+    "animalAge",
+    "animalType",
+    "animalColor",
+    "sickness",
+  ],
   run: async (args, metadata) => {
     if (checkValidParams(args, { allNotNull: true })) {
       console.error(
