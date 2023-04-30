@@ -9,7 +9,11 @@
     "registrar": "npm run start registrar"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Felipe Guajardo",
+    "email": "felipgg@gmail.com",
+    "url": "https://github.com/pipexlul"
+  },
   "license": "ISC",
   "type": "module"
 }
